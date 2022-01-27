@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  web:
+    image: nginx:1.21.6-alpine
+    container_name: Web
+    ports:
+      - "80:80"
+    depends_on:
+      - db_postgre
+  db_postgre:
+    image: postgres:9.6-alpine
+    container_name: db_postgre
+    restart: "no"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: root
+      POSTGRES_DB: devops
