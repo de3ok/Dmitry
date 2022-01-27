@@ -2,8 +2,6 @@ pipeline {
     agent any
     triggers {
         githubPullRequests events: [Open()], preStatus: true, spec: '', triggerMode: 'HEAVY_HOOKS',
-        no public field ‘acceptMergeRequestOnSuccess’ (or getter method) found in class com.dabsquared.gitlabjenkins.GitLabPushTrigger
-
     }
 
     options {
@@ -39,7 +37,7 @@ pipeline {
     )
 
     stages {
-        
+
         stage('checkout'){
             steps{
                 script{
