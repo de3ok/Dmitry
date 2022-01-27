@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        githubPullRequests events: [Open()], preStatus: true, spec: '', triggerMode: 'HEAVY_HOOKS',
+        githubPullRequests events: [Open()], preStatus: true, spec: '', triggerMode: 'HEAVY_HOOKS'
     }
 
     options {
